@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; 
+}
+
+.letter {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 85%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+    animation: popUp 0.8s ease-out;
+}
+
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 { color: #ff4d88; margin-bottom: 10px; }
+
+#secret-letter {
+    display: none; 
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin: 20px 0;
+    font-style: italic;
+    white-space: pre-wrap; 
+}
+
+button {
+    background: #ff4d88;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 136, 0.3);
+    transition: 0.3s;
+}
+
+button:hover { transform: scale(1.05); background: #ff3377; }
+button:active { transform: scale(0.95); }
+
+ 
+.heart { 
+    position: fixed; 
+    bottom: -50px;
+    font-size: 24px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatAndFade 3s ease-in-out forwards;
+}
+
+@keyframes floatAndFade {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+
+.fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
+.delay { animation-delay: 0.5s; }
+
+@keyframes fadeIn { to { opacity: 1; } }
